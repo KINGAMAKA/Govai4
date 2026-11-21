@@ -1,0 +1,6 @@
+{
+  "appId": "zm.govai.app",
+  "appName": "GOVAI",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}

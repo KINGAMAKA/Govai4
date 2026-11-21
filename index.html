@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="GOVAI helps people prepare for selected Zambian government and business services.">
+  <title>GOVAI – Government AI Services</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./assets/favicon.png">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside id="sidebar" class="sidebar" aria-label="Main navigation">
+      <div class="side-top">
+        <div class="brand-small"><span class="brand-mark">G</span><strong>GOVAI</strong></div>
+        <button id="closeSidebar" class="icon-btn close-side" aria-label="Close menu">×</button>
+      </div>
+      <button id="newChatBtn" class="new-chat">＋ <span>New Chat</span></button>
+      <div class="side-label">YOUR CHATS</div>
+      <div id="historyList" class="history-list"><p class="muted side-empty">Your conversations will appear here.</p></div>
+      <div class="side-label services-label">GUIDED DEMOS · 10 STEPS</div>
+      <nav class="service-nav demos">
+        <button data-wizard="business">🏢 Register a business</button>
+        <button data-wizard="tpin">🧾 Register a TPIN</button>
+        <button data-wizard="profile">📋 Create a business profile</button>
+      </nav>
+      <div class="side-label services-label">GOVERNMENT SERVICES</div>
+      <nav id="serviceNav" class="service-nav">
+        <button data-service="pacra">PACRA · Business registration</button>
+        <button data-service="zra">ZRA · Tax services</button>
+        <button data-service="starter">Business Starter Pack</button>
+        <button data-service="directory">More services</button>
+      </nav>
+      <div class="sidebar-foot">Independent prototype · Not a government website</div>
+    </aside>
+    <div id="scrim" class="scrim"></div>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button id="menuBtn" class="icon-btn" aria-label="Open menu">☰</button>
+        <div class="top-brand"><span class="brand-mark">G</span><strong>GOVAI</strong></div>
+        <button id="newChatTop" class="icon-btn" aria-label="New chat">＋</button>
+      </header>
+
+      <section id="welcome" class="welcome">
+        <div class="welcome-center">
+          <div class="hero-mark">G</div>
+          <h1>GOVAI</h1>
+          <p>How can I help you today?</p>
+          <div class="task-cards">
+            <button class="task-card" data-wizard="business"><span class="ti">🏢</span><span><strong>Register a business</strong><small>10 steps · voice · demo business name</small></span></button>
+            <button class="task-card" data-wizard="tpin"><span class="ti">🧾</span><span><strong>Register a TPIN</strong><small>10 steps · voice · demo TPIN</small></span></button>
+            <button class="task-card" data-wizard="profile"><span class="ti">📋</span><span><strong>Create a business profile</strong><small>10 steps · voice · demo profile</small></span></button>
+          </div>
+        </div>
+      </section>
+
+      <section id="chatView" class="chat-view hidden" aria-live="polite">
+        <div id="messages" class="messages"></div>
+      </section>
+
+      <div class="composer-zone">
+        <div id="suggestions" class="suggestions hidden">
+          <button data-wizard="business">Register a business</button>
+          <button data-wizard="tpin">Register a TPIN</button>
+          <button data-wizard="profile">Create a business profile</button>
+        </div>
+        <form id="composer" class="composer">
+          <textarea id="question" rows="1" placeholder="Ask a question" aria-label="Ask a question"></textarea>
+          <button id="micBtn" class="mic-btn hidden" type="button" aria-label="Speak your question">🎤</button>
+          <button id="sendBtn" type="submit" aria-label="Send message">↑</button>
+        </form>
+        <p class="disclaimer">GOVAI is an independent prototype. It is not affiliated with or endorsed by the Government of Zambia.</p>
+      </div>
+    </main>
+  </div>
+  <script src="./wizard.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
